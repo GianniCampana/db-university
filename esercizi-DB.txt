@@ -1,0 +1,48 @@
+1)SELEZIONARE TUTTI GLI STUDENTI NATI NEL 1990 (160)         
+SELECT `id`, `name`,`surname`,`date_of_birth` 
+FROM `students`
+WHERE `date_of_birth` > '1990'
+AND `date_of_birth` < '1991';
+
+
+
+2)SELEZIONARE TUTTI I CORSI CHE VALGONO PIU DI 10 CREDITI (479)
+SELECT `id`,`name`,`cfu`
+FROM `courses`
+WHERE `cfu` > '10';
+
+
+
+3)SELEZIONARE TUTTI GLI STUDENTI CHE HANNO PIU DI 30 ANNI (3106)
+SELECT `id`,`name`,`surname`,`date_of_birth`
+FROM `students`
+WHERE  (Year(Now())-YEAR (`date_of_birth`))> 30;
+
+
+4)SELEZIONA TUTTI I CORSI DEL PRIMO SEMESTRE DEL PRIMO ANNO DI UN QUALSIASI CORSO DI LAUREA (286)
+SELECT * 
+FROM `courses` 
+WHERE `period` = 'I semestre'
+AND `year` = '1';
+
+
+5)SELEZIONARE TUTTI GLI APPELLI DI ESAME CHE AVVENGONO NEL POMERIGGIO (dopo le 14) DEL 20/06/2021
+SELECT `id`,`date`,`hour`
+FROM `exams` 
+WHERE `date` = '2020/06/20'
+AND `hour` > '14:00:00';
+
+
+6)SELEZIONA TUTTI I CORSI DI LAUREA MAGISTRALE(38)
+SELECT `id`,`name`,`level`
+FROM `degrees`
+WHERE `level` = 'magistrale';
+
+7)DA QUANTI DIPARTIMENTI è COMPOSTA L'UNIVERSITA? (12)
+SELECT COUNT(*)
+FROM `departments`;
+
+8)QUANTI SONO GLI INSEGNANTI CHE NON HANNO UN NUMERO DI TELEFONO? (50)
+SELECT COUNT(*)
+FROM `teachers`
+WHERE `phone` IS NULL;
