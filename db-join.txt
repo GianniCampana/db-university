@@ -1,0 +1,31 @@
+1)SELEZIONA TUTTI GLI STUDENTI ISCRITTI AL CORSO DI LAUREA DI ECONOMIA
+SELECT `students`.`name`, `students`.`surname` AS `students`
+FROM `students`
+JOIN `degrees`
+WHERE `degrees`.`id`= '53';
+
+2)SELEZIONARE TUTTI I CORSI DI LAUREA DEL DIPARTIMENTO DI NEUROSCIENZE
+SELECT `degrees`.`name`
+FROM `departments` 
+JOIN `degrees` ON `departments`.`id` = `degrees`.`department_id`
+WHERE `departments`.`name` = 'Dipartimento di Neuroscienze';
+
+3. Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
+SELECT `course_teacher`.`course_id` AS `corsi Amato`
+FROM `course_teacher` 
+JOIN `teachers` ON `course_teacher`.`teacher_id` = `teachers`.`id`
+WHERE `teachers`.`id` = '44';
+
+4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il
+relativo dipartimento, in ordine alfabetico per cognome e nome.
+SELECT  `students`.`name`,`students`.`surname`, `students`.`degree_id`, `departments`.`name`
+FROM  `students`
+JOIN  `degrees`
+JOIN  `departments` ON  `degrees`.`department_id` =  `departments`.`id`;
+
+6. Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
+
+
+7. Selezionare per ogni studente quanti tentativi ha fatto per superare ciascuno dei suoi
+esami
+
